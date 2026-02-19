@@ -2,9 +2,7 @@
   "buildCommand": "npm run build", 
   "outputDirectory": "public",
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/camera.html"
-    }
+    { "source": "/camera", "destination": "/camera.html" },
+    { "source": "/", "destination": "/index.html" }
   ]
 }
