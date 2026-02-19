@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build", 
-  "outputDirectory": "public",
+  "outputDirectory": "dist",
   "rewrites": [
     { "source": "/camera", "destination": "/camera.html" },
     { "source": "/", "destination": "/index.html" }
