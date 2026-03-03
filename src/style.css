@@ -41,4 +41,19 @@ body {
   margin: 0 auto;  
   text-align: center;
 }
+.card-content #close-btn {
+  margin-top: 20px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.card-content #close-btn:hover {
+  background-color: #45a049;
+}
 
