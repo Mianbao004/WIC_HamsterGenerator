@@ -144,7 +144,6 @@ body.has-background.theme-pink {
 }
 
 /* ─── Theme buttons position ───────────────────────────────── */
-
 .theme-buttons {
   position: fixed;
   top: 20px;
@@ -283,9 +282,9 @@ body.has-background.theme-pink {
   z-index: 1;
 }
 
+
 #day:checked ~ .slider {
   transform: translateX(2.5px); 
-}
 
 #night:checked ~ .slider {
   transform: translateX(44px); 
@@ -294,6 +293,4 @@ body.has-background.theme-pink {
 #pink:checked ~ .slider {
   transform: translateX(86px); 
 }
-
-
 
