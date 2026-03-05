@@ -235,23 +235,16 @@ body.has-background.theme-pink {
   position: fixed;
   top: clamp(15px,3vh,30px);
   right: clamp(15px,3vw,30px);
-
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  justify-content: space-between;
-
-  width: 130px;
+  width: 132px;
   height: 44px;
-
   padding: 6px;
-
   border-radius: 50px;
-
   background: rgba(255,255,255,0.2);
   backdrop-filter: blur(8px);
-
   border: 1px solid rgba(255,255,255,0.4);
-
   z-index: 999;
 }
 
@@ -264,12 +257,21 @@ body.has-background.theme-pink {
 /* icons */
 
 .theme-toggle label{
-  flex:1;
-  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   cursor:pointer;
-  font-size:18px;
+  font-size:20px;
   z-index:2;
   transition: transform 0.2s ease;
+}
+
+.theme-toggle label:hover{
+  transform: scale(1.15);
+}
+
+input:checked + label{
+  transform: scale(1.2);
 }
 
 /* icon hover */
@@ -282,18 +284,15 @@ body.has-background.theme-pink {
 
 .slider{
   position:absolute;
-
-  width:32px;
-  height:32px;
+  width:36px;
+  height:36px;
 
   border-radius:50%;
-
   background:white;
-
-  left:6px;
-
+  top:4px;
+  left:4px;
   transition: transform 0.35s cubic-bezier(.4,0,.2,1);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
 }
 
 /* positions */
@@ -303,11 +302,11 @@ body.has-background.theme-pink {
 }
 
 #night:checked ~ .slider{
-  transform: translateX(42px);
+  transform: translateX(44px);
 }
 
 #pink:checked ~ .slider{
-  transform: translateX(84px);
+  transform: translateX(88px);
 }
 
 /* active icon */
@@ -315,5 +314,6 @@ body.has-background.theme-pink {
 input:checked + label{
   transform: scale(1.2);
 }
+
 
 
