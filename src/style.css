@@ -227,9 +227,8 @@ body.has-background.theme-pink {
   transform: translate(-50%, -100%); 
   width: 80px;
   height: 80px;
-
+}
   /* ————————————————THEME TOGGLE CONTAINER ————————————————————————————————*/
-/* ———————————————— THEME TOGGLE CONTAINER ————————————————— */
 .theme-toggle {
   position: fixed;
   top: clamp(15px, 3vh, 30px);
@@ -297,4 +296,5 @@ body.has-background.theme-pink {
 #pink:checked ~ .slider {
   transform: translateX(89px); 
 }
+
 
