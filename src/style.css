@@ -231,22 +231,19 @@ body.has-background.theme-pink {
 }
 .theme-toggle{
   position: fixed;
-  top: clamp(15px, 3vh, 30px);
-  right: clamp(15px, 3vw, 30px);
+  top: clamp(15px,3vh,30px);
+  right: clamp(15px,3vw,30px);
 
-  display: flex;
-  align-items: center;
+  display:flex;
+  align-items:center;
 
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
+  border-radius:40px;
+  padding:6px;
 
-  border-radius: 40px;
-  padding: 6px;
+  width:120px;
+  height:40px;
 
-  width: 120px;
-  height: 40px;
-
-  z-index: 999;
+  z-index:999;
 }
 
 /* hide radio buttons */
@@ -262,7 +259,7 @@ body.has-background.theme-pink {
   text-align:center;
   cursor:pointer;
   z-index:2;
-  font-size:18px;
+  font-size:20px;
 }
 
 /* sliding circle */
@@ -272,10 +269,8 @@ body.has-background.theme-pink {
   left:6px;
   width:32px;
   height:32px;
-
   background:white;
   border-radius:50%;
-
   transition: transform 0.3s ease;
 }
 
@@ -304,4 +299,5 @@ body.theme-flower{
 body.theme-moon{
   background: linear-gradient(#0f2027,#203a43);
 }
+
 
