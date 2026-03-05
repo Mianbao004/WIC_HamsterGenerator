@@ -230,13 +230,12 @@ body.has-background.theme-pink {
 
   /* ————————————————THEME TOGGLE CONTAINER ————————————————————————————————*/
 .theme-toggle {
-  position: fixed;
+  position: fixed; /* 保留 fixed，让它固定在右上角 */
   top: clamp(15px, 3vh, 30px);
   right: clamp(15px, 3vw, 30px);
 
   display: flex;
   align-items: center;
-  position: relative; 
 
   width: 135px;
   height: 46px;
@@ -265,8 +264,12 @@ body.has-background.theme-pink {
   transition: opacity 0.3s;
 }
 
+/* 选中的 label 全显，未选中的半透明 */
+.theme-toggle input:checked + label {
+  opacity: 1;
+}
 .theme-toggle input:not(:checked) + label {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .slider {
@@ -275,22 +278,24 @@ body.has-background.theme-pink {
   height: 36px;
   border-radius: 50%;
   background: white;
-  left: 5px; 
+  left: 5px; /* 对应 padding */
   top: 5px;
   transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28); 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
 
+/* --- 移动逻辑 (数值已微调以确保居中) --- */
 
 #day:checked ~ .slider {
-  transform: translateX(2.5px); 
+  transform: translateX(0px); /* 初始位置 */
+}
 
 #night:checked ~ .slider {
-  transform: translateX(44px); 
+  transform: translateX(44.5px); 
 }
 
 #pink:checked ~ .slider {
-  transform: translateX(86px); 
+  transform: translateX(89px); 
 }
 
