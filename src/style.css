@@ -228,8 +228,8 @@ body.has-background.theme-pink {
   transform: translate(-50%, -100%); 
   width: 80px;
   height: 80px;
-* ─── THEME TOGGLE  ────────────────────────────────────────────── *
-/* THEME TOGGLE CONTAINER */
+
+  /* ————————————————THEME TOGGLE CONTAINER ————————————————————————————————*/
 .theme-toggle {
   position: fixed;
   top: clamp(15px, 3vh, 30px);
@@ -266,44 +266,34 @@ body.has-background.theme-pink {
   transition: opacity 0.3s;
 }
 
-/* 未选中时降低透明度，更有层次感 */
 .theme-toggle input:not(:checked) + label {
   opacity: 0.6;
 }
 
 .slider {
   position: absolute;
-  /* 这里的宽度计算：(总宽135 - 左右内边距10) / 3 = 约 41.6px */
-  /* 为了美观，我们让 slider 稍微比 icon 容器窄一点点 */
   width: 36px; 
   height: 36px;
   border-radius: 50%;
   background: white;
-  left: 5px; /* 初始位置与 padding 对齐 */
+  left: 5px; 
   top: 5px;
-  transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28); /* 增加一点点回弹感 */
+  transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28); 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
 
-/* --- 移动逻辑修复 --- */
-
-/* 计算公式：
-   每个格子的宽度 = (135 - 10) / 3 = 41.66px
-   由于 slider 宽 36px，格宽 41.66px，
-   为了居中，我们要对齐的是每个 label 的中心
-*/
-
 #day:checked ~ .slider {
-  transform: translateX(2.5px); /* 微调确保居中 */
+  transform: translateX(2.5px); 
 }
 
 #night:checked ~ .slider {
-  transform: translateX(44px); /* 移动一个单位 */
+  transform: translateX(44px); 
 }
 
 #pink:checked ~ .slider {
-  transform: translateX(86px); /* 移动两个单位 */
+  transform: translateX(86px); 
 }
+
 
 
