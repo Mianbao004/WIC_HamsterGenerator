@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document.querySelectorAll('input[name="theme"]').forEach((radio) => {
   radio.addEventListener("change", (e) => {
     setTheme(e.target.value);
   });
