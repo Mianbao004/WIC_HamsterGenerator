@@ -33,6 +33,11 @@
   <input type="radio" name="theme" id="pink" value="pink">
   <label for="pink">🌸</label>
 
+      <script>
+  const savedTheme = localStorage.getItem("theme") || "day";
+  document.documentElement.className = `theme-${savedTheme}`; 
+    </script>
+
     <div class="slider"></div>
   </div>
 
