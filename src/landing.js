@@ -7,10 +7,6 @@ const pause = 1200;
 let index = 0;
 let typingStatus = true;
 
-  radio.addEventListener("change", (e) => {
-    ;
-  });
-});
 
 function typeLoop() {
   if (!welcomeEl) return; // Safety check
@@ -34,5 +30,6 @@ function typeLoop() {
   setTimeout(typeLoop, typingSpeed);
 }
 
-setTheme(saved || "day");
-typeLoop();
+document.addEventListener("DOMContentLoaded", () => {
+  typeLoop();
+});
