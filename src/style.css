@@ -8,10 +8,22 @@
   --theme-btn-hover: rgba(0, 0, 0, 0.85);
   --theme-btn-color: #ffffff;
 }
-:root { background-image: url("/images/backgrounds/Background_Day.jpg"); }
-.theme-night { background-image: url("/images/backgrounds/Background_Night.jpg") !important; }
-.theme-pink { background-image: url("/images/backgrounds/Background_Pink.png") !important; }
 
+body {
+  background-image: url("/images/backgrounds/Background_Day.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: background-image 0.5s ease;
+}
+
+body.theme-night {
+  background-image: url("/images/backgrounds/Background_Night.jpg") !important;
+}
+
+body.theme-pink {
+  background-image: url("/images/backgrounds/Background_Pink.jpg") !important;
+}
 body.theme-day {
   --theme-btn-bg: rgba(255, 200, 80, 1);
   --theme-btn-hover: rgba(255, 170, 30, 0.85);
@@ -302,6 +314,7 @@ body.has-background.theme-pink {
 #pink:checked ~ .slider {
   transform: translateX(89px); 
 }
+
 
 
 
