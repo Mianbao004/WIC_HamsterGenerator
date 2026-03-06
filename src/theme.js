@@ -16,9 +16,9 @@ radios.forEach(radio => {
     localStorage.setItem("theme", theme);
 
     document.body.classList.remove(
-      "theme-sun",
-      "theme-flower",
-      "theme-moon"
+      "theme-day",
+      "theme-night",
+      "theme-pink"
     );
 
     document.body.classList.add(`theme-${theme}`);
