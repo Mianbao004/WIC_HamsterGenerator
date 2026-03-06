@@ -8,17 +8,17 @@
 }
 
 body {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  transition: background-image 0.5s ease;
-  font-family: var(--font-primary);
   margin: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: var(--font-primary);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: background-image 0.5s ease;
+  background-image: url("/images/backgrounds/Background_Day.jpg"); /* 默认背景 */
 }
 
 body.theme-day {
@@ -38,21 +38,14 @@ body.theme-night {
 }
 
 body.theme-pink {
-  background-image: url("/images/backgrounds/Background_Pink.png");
+  background-image: url("/images/backgrounds/Background_Pink.jpg");
   --theme-btn-bg: rgba(255, 160, 180, 1);
   --theme-btn-hover: rgba(255, 120, 150, 0.85);
   --theme-btn-color: #5a0020;
   --theme-accent: #e91e8c;
 }
 /* ─── Base ─────────────────────────────────────────────────── */
-body {
-  font-family: var(--font-primary);
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 #dynamic-text {
   font-family: var(--font-welcome);
@@ -81,28 +74,6 @@ body {
   text-align: center;
 }
 
-body.has-background {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-body.has-background.theme-day {
-  background-image: url("/images/backgrounds/Background_Day.jpg");
-}
-
-body.has-background.theme-night {
-  background-image: url("/images/backgrounds/Background_Night.jpg");
-}
-
-body.has-background.theme-pink {
-  background-image: url("/images/backgrounds/Background_Pink.png");
-}
-
-.hidden {
-  display: none !important;
-}
 /* ─── Buttons ─────────────────────────────────────────────────── */
 .theme-buttons button,
 #webcamButton,
@@ -297,19 +268,6 @@ body.has-background.theme-pink {
   z-index: 1;
 }
 
-/* --- 修复后的移动逻辑，每个块都有完整的 {} --- */
-
-#day:checked ~ .slider {
-  transform: translateX(0px);
-}
-
-#night:checked ~ .slider {
-  transform: translateX(44.5px); 
-}
-
-#pink:checked ~ .slider {
-  transform: translateX(89px); 
-}
 
 
 
