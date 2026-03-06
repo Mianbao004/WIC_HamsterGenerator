@@ -9,11 +9,27 @@
   --theme-btn-color: #ffffff;
 }
 
+body {
+  background-image: url("/images/backgrounds/Background_Day.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: background-image 0.5s ease;
+}
+
+body.theme-night {
+  background-image: url("/images/backgrounds/Background_Night.jpg") !important;
+}
+
+body.theme-pink {
+  background-image: url("/images/backgrounds/Background_Pink.jpg") !important;
+}
 body.theme-day {
   --theme-btn-bg: rgba(255, 200, 80, 1);
   --theme-btn-hover: rgba(255, 170, 30, 0.85);
   --theme-btn-color: #3a2a00;
   --theme-accent: #f5a623;
+  background-image: url("/images/backgrounds/Background_Day.jpg")
 }
 
 body.theme-night {
@@ -21,6 +37,7 @@ body.theme-night {
   --theme-btn-hover: rgba(60, 40, 140, 0.85);
   --theme-btn-color: #c8b8ff;
   --theme-accent: #7c5cbf;
+  background-image: url("/images/backgrounds/Background_Day.jpg")
 }
 
 body.theme-pink {
@@ -28,6 +45,7 @@ body.theme-pink {
   --theme-btn-hover: rgba(255, 120, 150, 0.85);
   --theme-btn-color: #5a0020;
   --theme-accent: #e91e8c;
+  background-image: url("/images/backgrounds/Background_Day.jpg")
 }
 
 /* ─── Base ─────────────────────────────────────────────────── */
@@ -144,7 +162,6 @@ body.has-background.theme-pink {
 }
 
 /* ─── Theme buttons position ───────────────────────────────── */
-
 .theme-buttons {
   position: fixed;
   top: 20px;
@@ -225,7 +242,80 @@ body.has-background.theme-pink {
 #expression-img {
   position: absolute;
   pointer-events: none;
-  transform: translate(-50%, -100%); /* sits above the forehead point */
+  transform: translate(-50%, -100%); 
   width: 80px;
   height: 80px;
 }
+  /* ————————————————THEME TOGGLE CONTAINER ————————————————————————————————*/
+.theme-toggle {
+  position: fixed;
+  top: clamp(15px, 3vh, 30px);
+  right: clamp(15px, 3vw, 30px);
+  display: flex;
+  align-items: center;
+  width: 135px;
+  height: 46px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 5px;
+  z-index: 999;
+  box-sizing: border-box; 
+}
+
+.theme-toggle input {
+  display: none;
+}
+
+.theme-toggle label {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity 0.3s;
+}
+
+.theme-toggle input:checked + label {
+  opacity: 1;
+}
+
+.theme-toggle input:not(:checked) + label {
+  opacity: 0.5;
+}
+
+.slider {
+  position: absolute;
+  width: 36px; 
+  height: 36px;
+  border-radius: 50%;
+  background: white;
+  left: 5px; 
+  top: 5px;
+  transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+/* --- 修复后的移动逻辑，每个块都有完整的 {} --- */
+
+#day:checked ~ .slider {
+  transform: translateX(0px);
+}
+
+#night:checked ~ .slider {
+  transform: translateX(44.5px); 
+}
+
+#pink:checked ~ .slider {
+  transform: translateX(89px); 
+}
+
+
+
+
+
